@@ -44,29 +44,4 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// Create a new XMLHttpRequest object
-var xhr = new XMLHttpRequest();
-
-// Configure the request
-xhr.open('GET', 'example.php', true);
-
-// Set up a function to handle the response
-xhr.onload = function () {
-    if (xhr.status >= 200 && xhr.status < 300) {
-        // Parse the JSON response
-        var responseData = JSON.parse(xhr.responseText);
-
-        // Access the data
-        var outputDiv = document.getElementById('output');
-        outputDiv.innerHTML = '<p>Data: ' + responseData.data + '</p>' + '<p>Name: ' + responseData.name + '</p>' +
-            '<p>Age: ' + responseData.age + '</p>' +
-            '<p>City: ' + responseData.city + '</p>';
-    } else {
-        // Handle errors
-        console.error('Request failed with status ' + xhr.status);
-    }
-};
-
-// Send the request
-xhr.send();
 
